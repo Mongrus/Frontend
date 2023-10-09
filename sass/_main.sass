@@ -1,0 +1,321 @@
+.main
+    transform: translateY(-1rem)
+    grid-row-start:  section-one-start 
+    grid-column: start / end
+    padding-top: 20rem
+    z-index: 2
+    &__folder
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, $color-black 49.48%, $color-black 100%)
+        z-index: 3
+        grid-column: 1 / -1
+    &__paper
+        box-shadow: -47px 47px 0px -42px $color-orange
+        background: $color-gray
+        z-index: 1
+        grid-column: 1 / -1
+
+.section-one
+    color: white
+    text-align: center
+    padding: 6.5rem 0 12rem 0
+    &__main-content
+        margin: 0 auto
+        display: flex
+        flex-direction: column
+        align-items: center  
+    &__title
+        font-family: "OswaldB"
+        font-size: 4.8rem
+        font-weight: 700
+        line-height: 7rem
+        animation: main-h1 1s linear 2s
+        opacity: 0
+        animation-fill-mode: forwards
+    &__title-2
+        font-family: "DancingScriptB"
+        font-size: 3.6rem
+        font-weight: 700
+        line-height: 4rem
+        padding-bottom: 2rem
+        animation: main-h3 1s linear 2s
+        opacity: 0
+        animation-fill-mode: forwards
+    &__text
+        font-family: "NunitoM"
+        font-size: 2rem
+        font-weight: 500
+        line-height: 2.7rem
+        padding-bottom: 3rem
+        width: 35rem
+        animation: main-p 3s linear 3s
+        opacity: 0
+        animation-fill-mode: forwards
+    &__btn
+        font-family: "OswaldE"
+        font-size: 2.4rem
+        font-weight: 700
+        line-height: 3rem
+        padding: 1.5rem 5rem
+        background-color: $color-orange
+        border-radius: 1.5rem
+        text-decoration: none
+        color: $color-white
+        &:hover
+            transform: translateY(-1rem)
+        &:active
+            transform: translateY(-.6rem)
+
+    
+.section-two
+    color: $color-white
+    text-align: center
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    @include respond(tab-port)
+        display: block
+        padding-bottom: 3rem
+    &__left-part
+        position: relative
+        padding: 0 4rem
+    &__right-part
+        position: relative
+    &__title
+        font-family: "OswaldR"
+        font-size: 4rem
+        padding-bottom: 3rem
+    &__text
+        font-family: "NunitoM"
+        font-size: 2rem
+        padding-bottom: 2rem
+        &_1
+            padding-bottom: 9rem
+    &__ellipse
+        width: 10rem
+        height: 10rem
+        position: absolute
+        bottom: -5rem
+        right: -5rem
+        @include respond(tab-pc)
+            width: 8rem
+            height: 8rem
+            bottom: -4rem
+            right: -4rem
+        @include respond(tab-port)
+            display: none
+.section-three
+    position: relative
+    height: 70rem
+    display: grid
+    grid-template-columns: repeat(16, 1fr)
+    grid-template-rows: repeat(15, 1fr)
+    @include respond(tab-port)
+        grid-template-columns: 1fr 1fr 1fr
+        grid-template-rows: min-content 30rem
+        grid-gap: 2rem
+        padding: 0 3rem
+    @include respond(phone)
+        grid-template-columns: 8rem 1fr 8rem
+        grid-template-rows: min-content repeat(3, 1fr)
+        
+    &__main-title
+        text-align: center
+        font-family: "OswaldB"
+        font-size: 3.2rem
+        grid-column: 7 / 11
+        grid-row: 2 / 3
+        transition: 1s
+        &:hover
+            color: $color-orange
+            font-size: 3.6rem
+            transform: rotate(5deg)
+        @include respond(tab-port)
+            padding-top: 2rem 
+            grid-column: 2 / 3
+            grid-row: 1 / 2
+    &__one-title
+        font-family: "DancingScriptB"
+        font-size: 4rem
+        grid-column: 13 / 16
+        grid-row: 2 / 3
+        @include respond(tab-port)
+            display: none
+    &__two-title
+        font-family: "DancingScriptB"
+        font-size: 4rem
+        grid-column: 2 / 5
+        grid-row: 11 / 12
+        @include respond(tab-port)
+            display: none
+    &__three-title
+        font-family: "DancingScriptB" 
+        font-size: 4rem
+        grid-column: 13 / 17
+        grid-row: 11 / 12
+        @include respond(tab-port)
+            display: none
+    &__lower-title
+        text-align: center
+        grid-column: 2 / 5
+        grid-row: 13 / 14
+        font-size: "OswaldR"
+        font-size: 2.4rem
+        color: $color-orange
+        animation: lower-title 5s infinite
+        @include respond(tab-port)
+            display: none
+    &__img-site-1
+        grid-column: 2 / 8
+        grid-row: 4 / 9
+        background: url(../img/site-1.png) top / 100% auto no-repeat scroll
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))
+        border: .5rem inset $color-orange
+        padding: .3rem
+        &:hover
+            border: none
+            transition: 1s filter
+            filter: drop-shadow(0px 4px 10px $color-orange)
+            border-radius: 1.5rem
+            grid-row: 1 / -1
+            top: 50rem
+            z-index: 5
+        @include respond(tab-port)
+            grid-column: 1 / 2
+            grid-row: 2 / 3
+            &:hover
+                grid-column: 1 / 2
+                grid-row: 1 / -1
+
+        @include respond(phone)
+            grid-column: 2 / 3 
+            grid-row: 2 / 3
+            &:hover
+                grid-column: 2 / 3
+                grid-row: 1 / -1
+
+    &__img-site-2
+        grid-column: 10 / 16
+        grid-row: 4 / 9
+        background: url(../img/site-2.png) top / 100% auto no-repeat scroll
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))
+        border: .5rem inset $color-gray
+        padding: .3rem
+        &:hover
+            border: none
+            transition: 1s filter
+            filter: drop-shadow(0px 4px 10px $color-orange)
+            border-radius: 1.5rem
+            grid-row: 2 / 14
+            top: 50rem
+            z-index: 5
+        @include respond(tab-port)
+            grid-column: 2 / 3
+            grid-row: 2 / 3
+            &:hover
+                grid-column: 2 / 3
+                grid-row: 1 / -1
+        @include respond(phone)
+            grid-column: 2 / 3
+            grid-row: 3 / 4
+    &__img-site-3
+        grid-column: 6 / 12
+        grid-row: 10 / 15
+        background: url(../img/site-3.png) top / 100% auto no-repeat scroll
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))
+        border: .5rem inset $color-gray
+        padding: .3rem
+        &:hover
+            border: none
+            transition: 1s filter
+            filter: drop-shadow(0px 4px 10px $color-orange)
+            border-radius: 1.5rem
+            grid-row: 3 / -1
+            top: 50rem
+            z-index: 5
+        @include respond(tab-port)
+            grid-column: 3 / 4
+            grid-row: 2 / 3
+            &:hover
+                grid-column: 3 / 4
+                grid-row: 1 / -1
+        @include respond(phone)
+            grid-column: 2 / 3
+            grid-row: 4 / 5
+            &:hover
+                grid-column: 2 / 3
+                grid-row: 1 / -1
+            
+    &__arrow-1
+        position: absolute
+        bottom: 18rem
+        left: 5%
+        img
+            width: 21rem
+        @include respond(tab-port)
+            display: none
+    &__arrow-2
+        position: absolute
+        top: 9rem
+        right: 8%
+        img
+            width: 22rem
+        @include respond(tab-pc)
+            right: 9%  
+        @include respond(tab-port)
+            display: none 
+    &__arrow-3
+        position: absolute
+        bottom: 17rem
+        right: 3%
+        img
+            width: 25rem
+        @include respond(tab-pc)
+            right: 6%
+        @include respond(tab-port)
+            display: none
+    &__icons-1
+        grid-column: 2 / 3
+        grid-row: 14 / 15
+        &:hover
+            position: absolute
+            width: 100%
+            transform: rotate(-4deg)
+        @include respond(tab-port)
+            display: none
+    &__icons-2
+        grid-column: 3 / 4
+        grid-row: 14/ 15
+        &:hover
+            position: absolute
+            width: 100%
+            transform: translateX(-1rem)
+        @include respond(tab-port)
+            display: none
+    &__icons-3
+        grid-column: 4 / 5
+        grid-row: 14 / 15
+        &:hover
+            position: absolute
+            width: 100%
+            transform: rotate(4deg) translateX(-1rem)
+        @include respond(tab-port)
+            display: none
+        
+
+
+
+.container
+    padding: 0 10rem
+    display: grid
+    grid-template-rows: min-content min-content
+    @include respond(tab-port)
+        padding: 0 5rem
+        grid-template-rows: min-content 40rem
+    @include respond(phone)
+        padding: 0 5rem
+        grid-template-rows: min-content 73rem
+
+
+.backgraund-main 
+    background: url(../img/main.jpg) center / cover no-repeat
+    grid-column: 1 / -1
+    grid-row: section-two-start / section-four-start

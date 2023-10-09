@@ -1,0 +1,44 @@
+.footer
+    grid-row: section-three-start / section-four-end
+    grid-column: start / end
+    background: #212121
+    clip-path: polygon(0 30%, 100% 0%, 100% 100%, 0% 100%)
+    padding-top: 72rem
+    z-index: 1
+    text-align: center
+    @include respond(tab-port)
+        padding: 40rem 1rem 0 1rem
+    @include respond(phone)
+        padding: 75em 1rem 0 1rem
+
+    &__title
+        font-family: "OswaldB"
+        font-size: 4rem
+        color: $color-orange
+        padding-bottom: 1.5rem 
+    &__content
+        display: flex
+        justify-content: space-evenly
+        align-items: center
+    &__left-part
+        display: grid
+        grid-template-rows: repeat(3, 1fr)
+        grid-template-columns: repeat(2, minmax(min-content, max-content))
+        grid-gap: 2rem
+        justify-items: start
+        align-items: center
+        a
+            text-decoration: none
+            color: $color-white
+            font-family: "NunitoB"
+            font-size: 2.4rem
+            &:hover
+                color: $color-gray
+                transform: rotate(.8deg) translateY(-.5rem)
+        img
+            height: 6rem
+    &__right-part
+        img
+            margin: 0 auto
+            height: 15rem
+

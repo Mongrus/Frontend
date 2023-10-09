@@ -1,0 +1,57 @@
+.header
+    grid-row: section-one-start / section-one-end
+    grid-column: start / end
+    position: relative
+
+.navbar
+    position: absolute
+    &__container-nav
+        position: relative
+        display: grid
+        grid-template-columns: 11rem 1fr 1fr 11rem 
+        align-items: baseline
+        justify-items: end   
+        @include respond(tab-port)
+            grid-template-columns: 1fr 1fr 1fr
+    &__content-box
+        font-family: "OswaldR"
+        font-size: 2.8rem
+        display: grid
+        grid-template-columns: repeat(4, max-content)
+        z-index: 5
+    &__nav-items
+        padding: 2rem
+        a   
+            color: $color-white
+            text-decoration: none
+            &:visited
+                color: $color-white           
+        &:hover
+            background-color: $color-orange
+            border-radius: 0 0 1.5rem 1.5rem
+            transition: 1.5s background-color
+        &:active
+            transform: translateY(-1rem)
+    &__java
+        font-family: "OswaldE"
+        font-size: 4rem
+        color: $color-white
+        padding-right: 2rem
+        z-index: 5
+        img
+            width: 4rem 
+        @include respond(tab-port)
+            display: none 
+    &__liner
+        position: absolute
+        bottom: 1rem
+        right: 13rem
+        border: .15rem solid
+        width: 17rem
+        color: $color-orange
+        @include respond(tab-port)
+            display: none 
+.backgraund-video
+    width: 100%
+    height: 100%
+    object-fit: cover
